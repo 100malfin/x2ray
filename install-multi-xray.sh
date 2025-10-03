@@ -1,3 +1,8 @@
+# Hapus file yang bermasalah
+rm -f install-multi-xray.sh
+
+# Buat script baru dengan cara yang benar
+cat > install-multi-xray.sh << 'EOF'
 #!/bin/bash
 
 # Cek root
@@ -324,3 +329,10 @@ generate_links "vless" 443 "tls" "httpupgrade" "$HTTPUPGRADE_PATH" ""
 echo -e "\n=============================================="
 echo "Semua link tersimpan di: /root/xray-links.txt"
 echo "=============================================="
+EOF
+
+# Beri izin eksekusi
+chmod +x install-multi-xray.sh
+
+# Jalankan script
+./install-multi-xray.sh
